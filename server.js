@@ -4,6 +4,8 @@ var path = require('path');
 
 var s3 = require('./s3');
 
+var db = require('./database');
+
 var s3Config = {
   accessKey: process.env.S3_ACCESS_KEY,
   secretKey: process.env.S3_SECRET_KEY,
@@ -26,6 +28,15 @@ app.get('/s3_credentials', function(request, response) {
   } else {
     response.status(400).send('filename is required');
   }
+});
+
+app.get('/category_names', (req, res) => {
+    res.json(db.getCategories());
+});
+
+app.get('/add_item', (req, res) => {
+  db.uploadDocument(req.query);
+  res.json({ success: true, query: req.query});
 });
 
 app.listen(app.get('port'), function() {

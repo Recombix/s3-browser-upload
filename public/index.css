@@ -1,0 +1,14 @@
+body {
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+}
+
+#displayOrder {
+    width: 40px;
+}

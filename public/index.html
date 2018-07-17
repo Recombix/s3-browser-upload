@@ -1,23 +1,77 @@
 <html>
-  <head>
+<head>
     <title>S3 Upload Demo</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload.js"></script>
     <script src="/client.js"></script>
+    <link rel="stylesheet" href="./index.css">
     <script>
-      $(function() {
-        initS3FileUpload($('#fileInput'));
-      });
+        $(function() {
+            initS3FileUpload($('#fileInput'));
+        });
     </script>
-  </head>
-  <body>
-    <h1>S3 Upload Demo</h1>
-    <p>Sorry, but you can <b>only upload files less than a kilobyte here</b>.</p>
-    <p>Here's an image that you can use: <img src="/demo.png" alt="demo image" /></p>
-    <form>
-      <input id="fileInput" type="file" name="file" />
-    </form>
-  </body>
+</head>
+<body>
+<h1>Lamonby Photography - Admin</h1>
+<p>Upload new image: </p>
+<form id="user-form">
+    <label for="category">Category</label>
+    <select id="category"></select>
+
+    <br>
+    <br>
+    <br>
+    <label for="displayOrder">Display order (number)</label>
+    <input type="text" name="displayOrder" title="Display Order" id="displayOrder"/>
+
+    <br>
+    <br>
+    <br>
+    <label for="displayOrder">Image title</label>
+    <input type="text" name="displayOrder" title="title" id="title"/>
+
+    <br>
+    <br>
+    <br>
+    <label for="displayOrder">Image description</label>
+    <input type="text" name="displayOrder" title="description" id="description"/>
+
+    <br>
+    <br>
+    <br>
+    <label for="keywords">Keywords (comma separated)</label>
+    <input type="text" name="keywords" title="Keywords" id="keywords"/>
+
+    <br>
+    <br>
+    <br>
+    <label for="displayHomepage">Display on homepage?</label>
+    <input type="checkbox" id="displayHomepage" name="displayHomepage"
+           value="displayOnHomepage" />
+
+    <br>
+    <br>
+    <br>
+    <input id="fileInput" type="file" name="file" />
+    <br>
+    <br>
+    <br>
+</form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>Modify existing image: </p>
+<form>
+    <label for="image">Image</label>
+    <select id="image"></select>
+</form>
+</body>
 </html>
 
