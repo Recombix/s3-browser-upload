@@ -12,3 +12,14 @@ input {
 #displayOrder {
     width: 40px;
 }
+
+.image {
+    width: fit-content;
+    height: fit-content;
+    border: crimson dashed 1px;
+}
+
+img {
+    width: 300px;
+    height: auto;
+}

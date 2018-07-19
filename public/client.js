@@ -7,10 +7,6 @@ var credentialsUrl = '/s3_credentials';
 var categoriesUrl = '/category_names';
 var addToDbUrl = '/add_item';
 
-// The URL to your endpoint to register the uploaded file
-let uploadUrl = '/assets';
-
-
 $.ajax({
     url: categoriesUrl,
     type: 'GET',
@@ -47,7 +43,7 @@ const addToDB = function (filename) {
             homepage
         },
         success: (res) => {
-            console.log('woo', res);
+            console.log('upload success', res);
         }
     });
 };
@@ -92,6 +88,9 @@ function onS3Done(e, data) {
 
     // Typically, after uploading a file to S3, you want to register that file with
     // your backend. Remember that we did not persist anything before the upload.
+    console.log($('.success').remove());
     console.log($('<a class="success" />').attr('href', s3Url).text('Success! File uploaded at '+ s3Url).appendTo($('#user-form')));
+    console.log($('.uploaded-img').remove());
+    console.log($('<img class="uploaded-img" src="" alt="uploaded image">').attr('src', s3Url).appendTo($('.image')));
     addToDB(s3Key);
 }
